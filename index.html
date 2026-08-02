@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everton Lúcio R. de Andrade | Operador de Processo IV & Caldeiraria</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-sky-50/50 text-slate-700 font-sans antialiased relative">
+
+    <!-- BARRA SUPERIOR DE CONTATO -->
+    <div class="bg-slate-900 text-sky-100 text-xs py-2.5 border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-400"></i> Rafard - SP, Brasil</span>
+                <span class="text-slate-700 hidden sm:inline">|</span>
+                <span class="flex items-center gap-2 hidden md:flex"><i class="fa-solid fa-industry text-brand-400"></i> Setor Metalmecânico & Implementos Rodoviários</span>
+            </div>
+            <div class="flex items-center gap-4 font-medium">
+                <a href="mailto:valterfa.2006@uol.com.br" class="hover:text-white transition-colors flex items-center gap-1.5"><i class="fa-solid fa-envelope text-brand-400"></i> valterfa.2006@uol.com.br</a>
+                <span class="text-slate-700">|</span>
+                <a href="tel:19994487582" class="hover:text-white transition-colors flex items-center gap-1.5"><i class="fa-solid fa-phone text-brand-400"></i> (19) 99448-7582</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER DE NAVEGAÇÃO FIXO NO TOPO COM MENU RESPONSIVO -->
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-sky-100 shadow-sm transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 bg-brand-500 text-white rounded-xl flex items-center justify-center font-bold text-base sm:text-lg font-heading shadow-md shadow-brand-500/20 shrink-0">
+                    EA
+                </div>
+                <div>
+                    <span class="font-heading font-bold text-sm sm:text-base text-slate-900 block leading-tight">EVERTON LÚCIO R. DE ANDRADE</span>
+                    <span class="text-[11px] sm:text-xs text-brand-600 font-semibold block mt-0.5">Operador IV • Técnico em Mecânica</span>
+                </div>
+            </div>
+
+            <!-- NAVEGAÇÃO DESKTOP -->
+            <nav class="hidden lg:flex space-x-6 text-xs font-semibold uppercase tracking-wider text-slate-600">
+                <a href="#perfil" class="hover:text-brand-500 transition-colors">Perfil</a>
+                <a href="#habilidades" class="hover:text-brand-500 transition-colors">Habilidades</a>
+                <a href="#projetos" class="hover:text-brand-500 transition-colors">Projetos</a>
+                <a href="#experiencia" class="hover:text-brand-500 transition-colors">Histórico</a>
+                <a href="#cursos" class="hover:text-brand-500 transition-colors">Formação</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center">
+                <a href="https://wa.me/5519994487582" target="_blank" class="bg-brand-500 hover:bg-brand-600 text-white font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
+                </a>
+            </div>
+
+            <!-- BOTÃO MENU HAMBÚRGUER (MOBILE/TABLET) -->
+            <button id="mobile-menu-btn" aria-label="Abrir menu" class="lg:hidden p-2.5 text-slate-700 hover:text-brand-500 focus:outline-none rounded-lg hover:bg-slate-100 transition-colors">
+                <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- MENU MOBILE SUSPENSO (ABRE AO CLICAR) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-sky-100 shadow-lg transition-all duration-300">
+            <nav class="flex flex-col px-4 pt-2 pb-6 space-y-3 text-sm font-semibold uppercase tracking-wider text-slate-700">
+                <a href="#perfil" class="mobile-link py-2 border-b border-slate-100 hover:text-brand-500">Perfil</a>
+                <a href="#habilidades" class="mobile-link py-2 border-b border-slate-100 hover:text-brand-500">Habilidades</a>
+                <a href="#projetos" class="mobile-link py-2 border-b border-slate-100 hover:text-brand-500">Projetos</a>
+                <a href="#experiencia" class="mobile-link py-2 border-b border-slate-100 hover:text-brand-500">Histórico</a>
+                <a href="#cursos" class="mobile-link py-2 border-b border-slate-100 hover:text-brand-500">Formação</a>
+                <a href="https://wa.me/5519994487582" target="_blank" class="bg-brand-500 text-white text-center py-2.5 rounded-lg flex items-center justify-center gap-2 mt-2 font-semibold">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Falar no WhatsApp
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 space-y-12">
+
+        <!-- CARTÃO PRINCIPAL DE PERFIL -->
+        <section id="perfil" class="bg-white border border-sky-100 rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div class="grid md:grid-cols-12 gap-8 items-center">
+                
+              <!-- FOTO / AVATAR -->
+<div class="md:col-span-4 flex flex-col items-center">
+    <div class="relative w-52 h-64 rounded-2xl border-2 border-brand-200 overflow-hidden shadow-md group bg-slate-100">
+        <!-- FOTO DO PERFIL -->
+        <img 
+            src="coruja.jpeg" 
+            alt="Foto de Perfil - Everton L. R. de Andrade" 
+            class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+        >
+        
+        <!-- DEGRADÊ SUTIL NO RODAPÉ DA FOTO PARA DESTAQUE -->
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent opacity-60"></div>
+    </div>
+    
+    <!-- BADGES E STATUS -->
+    <div class="mt-4 flex flex-wrap justify-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Ativo no Mercado
+        </span>
+        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold bg-brand-50 text-brand-700 border border-brand-200 shadow-sm">
+            21+ Anos Experiência
+        </span>
+    </div>
+</div>
+
+                <!-- RESUMO DE APRESENTAÇÃO -->
+                <div class="md:col-span-8 space-y-5">
+                    <div class="border-b border-slate-100 pb-4">
+                        <h1 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900">
+                            EVERTON LÚCIO ROMAGNOLO DE ANDRADE
+                        </h1>
+                        <p class="text-brand-600 font-semibold text-sm sm:text-base mt-1 flex items-center gap-2">
+                            <i class="fa-solid fa-gears text-xs"></i> Operador de Processo de Produção IV • Carrocerias Bachiega (Desde Março/2005)
+                        </p>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Trabalho há 21 anos na empresa <strong>Carrocerias Bachiega</strong>, onde desenvolvo o trabalho de corte e dobra para o processo de montagem e manutenção de implementos rodoviários. Ao longo dessa trajetória sólida, adquiri amplo conhecimento prático e técnico no processo de conformação do metal e manutenção preventivo-corretiva de máquinas operacionais.
+                    </p>
+
+                    <!-- OBJETIVO & VISÃO -->
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="bg-brand-50/40 border border-brand-100 p-4 rounded-xl">
+                            <h2 class="text-xs font-bold text-brand-800 uppercase tracking-wider flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-bullseye text-brand-500"></i> Objetivo Profissional
+                            </h2>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Pretendo crescer ainda mais no setor de implementos rodoviários, buscando novos desafios operacionais para aprimorar e elevar a qualidade desse segmento tão vital para o transporte e a economia do Brasil.
+                            </p>
+                        </div>
+                        <div class="bg-brand-50/40 border border-brand-100 p-4 rounded-xl">
+                            <h2 class="text-xs font-bold text-brand-800 uppercase tracking-wider flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-lightbulb text-brand-500"></i> Abordagem & Solução
+                            </h2>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Destaco-me pela habilidade de olhar problemas sob diferentes perspectivas, encontrando formas criativas, seguras e eficientes de solucioná-los no dia a dia da fábrica.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ESTATÍSTICAS E MÉTRICAS -->
+        <section class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="bg-white border border-sky-100 p-5 rounded-xl flex items-center gap-4 shadow-sm">
+                <div class="w-12 h-12 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center text-xl shrink-0 border border-brand-100">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <div>
+                    <span class="block text-xl font-bold font-heading text-slate-900">21 Anos</span>
+                    <span class="block text-[11px] text-slate-500 uppercase font-medium">Carrocerias Bachiega</span>
+                </div>
+            </div>
+
+            <div class="bg-white border border-sky-100 p-5 rounded-xl flex items-center gap-4 shadow-sm">
+                <div class="w-12 h-12 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center text-xl shrink-0 border border-brand-100">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <span class="block text-xl font-bold font-heading text-slate-900">Técnico</span>
+                    <span class="block text-[11px] text-slate-500 uppercase font-medium">Mecânica (Paula Souza)</span>
+                </div>
+            </div>
+
+            <div class="bg-white border border-sky-100 p-5 rounded-xl flex items-center gap-4 shadow-sm">
+                <div class="w-12 h-12 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center text-xl shrink-0 border border-brand-100">
+                    <i class="fa-solid fa-compass-drafting"></i>
+                </div>
+                <div>
+                    <span class="block text-xl font-bold font-heading text-slate-900">Caldeiraria</span>
+                    <span class="block text-[11px] text-slate-500 uppercase font-medium">Traçador SENAI</span>
+                </div>
+            </div>
+
+            <div class="bg-white border border-sky-100 p-5 rounded-xl flex items-center gap-4 shadow-sm">
+                <div class="w-12 h-12 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center text-xl shrink-0 border border-brand-100">
+                    <i class="fa-solid fa-users-gear"></i>
+                </div>
+                <div>
+                    <span class="block text-xl font-bold font-heading text-slate-900">Liderança</span>
+                    <span class="block text-[11px] text-slate-500 uppercase font-medium">Setor de Dobra/Corte</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPETÊNCIAS E HABILIDADES TÉCNICAS -->
+        <section id="habilidades" class="space-y-6">
+            <div class="flex items-center justify-between border-b border-sky-200 pb-3">
+                <h2 class="text-lg sm:text-xl font-heading font-bold text-slate-900 border-l-4 border-brand-500 pl-3 uppercase tracking-wide">
+                    Competências & Habilidades Técnicas
+                </h2>
+                <span class="text-xs font-semibold text-slate-400 hidden sm:block uppercase">Saber Fazer</span>
+            </div>
+
+            <!-- SOFT SKILLS -->
+            <div class="bg-white p-6 rounded-xl border border-sky-100 shadow-sm space-y-3">
+                <h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-brain text-brand-500"></i> Competências Comportamentais & Gestão
+                </h3>
+                <div class="flex flex-wrap gap-2 pt-1">
+                    <span class="bg-brand-50 text-brand-800 border border-brand-200 text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5"><i class="fa-solid fa-comments text-brand-500"></i> Comunicação</span>
+                    <span class="bg-brand-50 text-brand-800 border border-brand-200 text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5"><i class="fa-solid fa-wand-magic-sparkles text-brand-500"></i> Criatividade & Resolução de Problemas</span>
+                    <span class="bg-brand-50 text-brand-800 border border-brand-200 text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5"><i class="fa-solid fa-sitemap text-brand-500"></i> Organização</span>
+                    <span class="bg-brand-50 text-brand-800 border border-brand-200 text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5"><i class="fa-solid fa-calendar-days text-brand-500"></i> Planejamento</span>
+                    <span class="bg-brand-50 text-brand-800 border border-brand-200 text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5"><i class="fa-solid fa-microscope text-brand-500"></i> Conhecimento Técnico Aprofundado</span>
+                    <span class="bg-brand-50 text-brand-800 border border-brand-200 text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5"><i class="fa-solid fa-people-group text-brand-500"></i> Liderança de Equipe</span>
+                </div>
+            </div>
+
+            <!-- CARDS TÉCNICOS -->
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+                
+                <div class="bg-white p-5 rounded-xl border border-sky-100 hover:border-brand-400 transition-all shadow-sm">
+                    <div class="flex items-center gap-3 mb-3 text-slate-900 font-bold text-sm">
+                        <div class="w-8 h-8 rounded bg-brand-50 text-brand-600 flex items-center justify-center text-sm border border-brand-100">
+                            <i class="fa-solid fa-fire-flame-curved"></i>
+                        </div>
+                        <span>Oxicorte & Plasma</span>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Operação e elaboração de corte por plasma e oxicorte de chapas metálicas de diversas espessuras para implementos.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 text-[10px] font-semibold text-brand-800">
+                        <span class="bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Corte Plasma</span>
+                        <span class="bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Oxicorte</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-sky-100 hover:border-brand-400 transition-all shadow-sm">
+                    <div class="flex items-center gap-3 mb-3 text-slate-900 font-bold text-sm">
+                        <div class="w-8 h-8 rounded bg-brand-50 text-brand-600 flex items-center justify-center text-sm border border-brand-100">
+                            <i class="fa-solid fa-compact-disc"></i>
+                        </div>
+                        <span>Dobra, Guilhotina & Prensa</span>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Conformação precisa de metal, operação de guilhotina, prensa hidráulica e serra. Liderança operacional no setor.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 text-[10px] font-semibold text-brand-800">
+                        <span class="bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Dobradeira</span>
+                        <span class="bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Prensa Hidráulica</span>
+                        <span class="bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Guilhotina</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-sky-100 hover:border-brand-400 transition-all shadow-sm">
+                    <div class="flex items-center gap-3 mb-3 text-slate-900 font-bold text-sm">
+                        <div class="w-8 h-8 rounded bg-brand-50 text-brand-600 flex items-center justify-center text-sm border border-brand-100">
+                            <i class="fa-solid fa-pen-ruler"></i>
+                        </div>
+                        <span>Caldeiraria & Traçagem</span>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Qualificação como Caldeireiro Traçador para interpretação de desenhos, planificação e desenvolvimento de formas em aço.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 text-[10px] font-semibold text-brand-800">
+                        <span class="bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Traçador SENAI</span>
+                        <span class="bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Aço Carbono</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-sky-100 hover:border-brand-400 transition-all shadow-sm">
+                    <div class="flex items-center gap-3 mb-3 text-slate-900 font-bold text-sm">
+                        <div class="w-8 h-8 rounded bg-brand-50 text-brand-600 flex items-center justify-center text-sm border border-brand-100">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <span>Usinagem & Torno CNC</span>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Usinagem de peças mecânicas em máquinas convencionais e formação em programação e operação de Torno CNC.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 text-[10px] font-semibold text-brand-800">
+                        <span class="bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Torno Mecânico</span>
+                        <span class="bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Torno CNC</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-sky-100 hover:border-brand-400 transition-all shadow-sm">
+                    <div class="flex items-center gap-3 mb-3 text-slate-900 font-bold text-sm">
+                        <div class="w-8 h-8 rounded bg-brand-50 text-brand-600 flex items-center justify-center text-sm border border-brand-100">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <span>Pequenas Montagens & Solda</span>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Ponteamento e montagens estruturais auxiliares utilizando processo de Solda MIG e Eletrodo Revestido.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 text-[10px] font-semibold text-brand-800">
+                        <span class="bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Solda MIG</span>
+                        <span class="bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Eletrodo Revestido</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-sky-100 hover:border-brand-400 transition-all shadow-sm">
+                    <div class="flex items-center gap-3 mb-3 text-slate-900 font-bold text-sm">
+                        <div class="w-8 h-8 rounded bg-brand-50 text-brand-600 flex items-center justify-center text-sm border border-brand-100">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+                        <span>Gestão de Estoque Metalúrgico</span>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Administração e controle de estoque de chapas e perfis laminados, com aproveitamento inteligente de retalhos.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 text-[10px] font-semibold text-brand-800">
+                        <span class="bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Controle de Chapas</span>
+                        <span class="bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Perfis Laminados</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+ <!-- PROJETOS REALIZADOS -->
+<section id="projetos" class="space-y-5">
+    <div class="border-b border-sky-200 pb-3">
+        <h2 class="text-lg sm:text-xl font-heading font-bold text-slate-900 border-l-4 border-brand-500 pl-3 uppercase tracking-wide">
+            Projetos Desenvolvidos & Registros Técnicos
+        </h2>
+        <p class="text-xs text-slate-500 mt-1">Galeria de peças, conformações e soluções fabris fabricadas em aço carbono</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. Montagem Final de Traçagem (IMAGEM) -->
+        <div class="bg-white border border-sky-100 rounded-xl overflow-hidden shadow-sm flex flex-col hover:border-brand-400 hover:shadow-md transition-all group cursor-pointer" onclick="openMediaModal('image', 'imagens/a montagem final das peças do curso de tracagem e caldeiraria Feito em aço carbono Corte em plasma.jpeg')">
+            <div class="relative h-48 bg-slate-100 overflow-hidden border-b border-sky-100">
+                <img 
+                    src="imagens/a montagem final das peças do curso de tracagem e caldeiraria Feito em aço carbono Corte em plasma.jpeg" 
+                    alt="Montagem de Caldeiraria em Aço Carbono" 
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                >
+                <span class="absolute top-2 left-2 bg-slate-900/80 backdrop-blur-md text-white font-bold text-[10px] px-2.5 py-1 rounded uppercase border border-slate-700/50">
+                    CURSO SENAI
+                </span>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Montagem de Caldeiraria em Aço Carbono</h3>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Montagem final das peças desenvolvidas durante o curso de traçagem e caldeiraria, cortadas no plasma.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Aquecimento de Chapa em Forja (VÍDEO 1 - Exibe Thumbnail de Capa) -->
+        <div class="bg-white border border-sky-100 rounded-xl overflow-hidden shadow-sm flex flex-col hover:border-brand-400 hover:shadow-md transition-all group cursor-pointer" onclick="openMediaModal('video', 'videos/ed750fa9-033a-4753-af44-8d281680806a.mov')">
+            <div class="relative h-48 bg-slate-900 overflow-hidden border-b border-sky-100">
+                <!-- Capa do Vídeo usando Imagem Estática para padronizar tamanho -->
+                <img 
+                    src="imagens/Conformação  Chapa de aço em prensa hidráulica.jpeg" 
+                    alt="Aquecimento de Chapa em Forja"
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300 opacity-90"
+                >
+                <div class="absolute inset-0 bg-slate-950/30 group-hover:bg-slate-950/10 transition-colors flex items-center justify-center">
+                    <div class="w-10 h-10 rounded-full bg-brand-500/90 text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                    </div>
+                </div>
+                <span class="absolute top-2 left-2 bg-brand-600/90 backdrop-blur-md text-white font-bold text-[10px] px-2.5 py-1 rounded uppercase border border-brand-400/30">
+                    <i class="fa-solid fa-circle-play mr-1"></i> VÍDEO
+                </span>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Aquecimento de Chapa em Forja</h3>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Tratamento térmico e aquecimento de chapa de aço em forja para o processo de conformação mecânica.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Corte a Plasma (VÍDEO 2) -->
+        <div class="bg-white border border-sky-100 rounded-xl overflow-hidden shadow-sm flex flex-col hover:border-brand-400 hover:shadow-md transition-all group cursor-pointer" onclick="openMediaModal('video', 'videos/9ac85695-3c34-4b54-9342-6c563c925860.mov')">
+            <div class="relative h-48 bg-slate-900 overflow-hidden border-b border-sky-100">
+                <img 
+                    src="imagens/Suporte para mangueiras pneumáticas e parte elétrica cortado no plasma..jpeg" 
+                    alt="Corte a plasma de peças"
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300 opacity-90"
+                >
+                <div class="absolute inset-0 bg-slate-950/30 group-hover:bg-slate-950/10 transition-colors flex items-center justify-center">
+                    <div class="w-10 h-10 rounded-full bg-brand-500/90 text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                    </div>
+                </div>
+                <span class="absolute top-2 left-2 bg-brand-600/90 backdrop-blur-md text-white font-bold text-[10px] px-2.5 py-1 rounded uppercase border border-brand-400/30">
+                    <i class="fa-solid fa-circle-play mr-1"></i> VÍDEO
+                </span>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Corte a plasma de peças</h3>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Corte de peças com plasma com alta precisão dimensional.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Conformação em Prensa Hidráulica (IMAGEM) -->
+        <div class="bg-white border border-sky-100 rounded-xl overflow-hidden shadow-sm flex flex-col hover:border-brand-400 hover:shadow-md transition-all group cursor-pointer" onclick="openMediaModal('image', 'imagens/Conformação  Chapa de aço em prensa hidráulica.jpeg')">
+            <div class="relative h-48 bg-slate-100 overflow-hidden border-b border-sky-100">
+                <img 
+                    src="imagens/Conformação  Chapa de aço em prensa hidráulica.jpeg" 
+                    alt="Conformação em Prensa Hidráulica" 
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                >
+                <span class="absolute top-2 left-2 bg-slate-900/80 backdrop-blur-md text-white font-bold text-[10px] px-2.5 py-1 rounded uppercase border border-slate-700/50">
+                    PRENSA HIDRÁULICA
+                </span>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Conformação em Prensa Hidráulica</h3>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Dobra e conformação de chapas espessas de aço em prensa hidráulica para componentes estruturais.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Suporte para Cavalo Mecânico (IMAGEM) -->
+        <div class="bg-white border border-sky-100 rounded-xl overflow-hidden shadow-sm flex flex-col hover:border-brand-400 hover:shadow-md transition-all group cursor-pointer" onclick="openMediaModal('image', 'imagens/Suporte para mangueiras pneumáticas e parte elétrica acoplada ao cavalo mecânico para a melhor armazenamento e design..jpg')">
+            <div class="relative h-48 bg-slate-100 overflow-hidden border-b border-sky-100">
+                <img 
+                    src="imagens/Suporte para mangueiras pneumáticas e parte elétrica acoplada ao cavalo mecânico para a melhor armazenamento e design..jpg" 
+                    alt="Suporte para Mangueiras Cavalo Mecânico" 
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                >
+                <span class="absolute top-2 left-2 bg-slate-900/80 backdrop-blur-md text-white font-bold text-[10px] px-2.5 py-1 rounded uppercase border border-slate-700/50">
+                    CAVALO MECÂNICO
+                </span>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Suporte p/ Mangueiras (Cavalo Mecânico)</h3>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Suporte para mangueiras pneumáticas e parte elétrica acoplada para melhor armazenamento, segurança e design.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Suporte para Implemento Rodoviário (IMAGEM) -->
+        <div class="bg-white border border-sky-100 rounded-xl overflow-hidden shadow-sm flex flex-col hover:border-brand-400 hover:shadow-md transition-all group cursor-pointer" onclick="openMediaModal('image', 'imagens/Suporte para mangueiras pneumáticas e parte elétrica cortado no plasma..jpeg')">
+            <div class="relative h-48 bg-slate-100 overflow-hidden border-b border-sky-100">
+                <img 
+                    src="imagens/Suporte para mangueiras pneumáticas e parte elétrica cortado no plasma..jpeg" 
+                    alt="Suporte para Mangueiras Pneumáticas Implemento" 
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                >
+                <span class="absolute top-2 left-2 bg-slate-900/80 backdrop-blur-md text-white font-bold text-[10px] px-2.5 py-1 rounded uppercase border border-slate-700/50">
+                    IMPLEMENTO RODOVIÁRIO
+                </span>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Suporte p/ Mangueiras Pneumáticas (Implemento)</h3>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Desenvolvimento e corte em plasma de suporte com sistema elétrico acoplado diretamente ao implemento.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Proteção de Redutor Hidráulico (IMAGEM) -->
+        <div class="bg-white border border-sky-100 rounded-xl overflow-hidden shadow-sm flex flex-col hover:border-brand-400 hover:shadow-md transition-all group cursor-pointer" onclick="openMediaModal('image', 'imagens/Proteção de um redutor hidráulico.jpeg')">
+            <div class="relative h-48 bg-slate-100 overflow-hidden border-b border-sky-100">
+                <img 
+                    src="imagens/Proteção de um redutor hidráulico.jpeg" 
+                    alt="Proteção para Redutor Hidráulico" 
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                >
+                <span class="absolute top-2 left-2 bg-slate-900/80 backdrop-blur-md text-white font-bold text-[10px] px-2.5 py-1 rounded uppercase border border-slate-700/50">
+                    PROTEÇÃO INDUSTRIAL
+                </span>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Proteção para Redutor Hidráulico</h3>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Fabricação de estrutura metálica para proteção do sistema de redutor hidráulico contra impactos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. Ralo Personalizado (IMAGEM) -->
+        <div class="bg-white border border-sky-100 rounded-xl overflow-hidden shadow-sm flex flex-col hover:border-brand-400 hover:shadow-md transition-all group cursor-pointer" onclick="openMediaModal('image', 'imagens/pequena montagem ralo personalizado.jpeg')">
+            <div class="relative h-48 bg-slate-100 overflow-hidden border-b border-sky-100">
+                <img 
+                    src="imagens/pequena montagem ralo personalizado.jpeg" 
+                    alt="Ralo Personalizado" 
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                >
+                <span class="absolute top-2 left-2 bg-slate-900/80 backdrop-blur-md text-white font-bold text-[10px] px-2.5 py-1 rounded uppercase border border-slate-700/50">
+                    MONTAGEM ESPECIAL
+                </span>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Ralo Personalizado</h3>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Confecção de ralo metálico sob medida com furação especial e ponteamento de solda.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PROJETOS ARTESANAIS E UTILITÁRIOS -->
+    <div class="bg-brand-50/60 border border-brand-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-sm font-heading font-bold text-brand-900 mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-screwdriver-wrench text-brand-500"></i> Outras Peças Customizadas & Aproveitamento de Material:
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-4 text-xs">
+            <div class="bg-white p-4 rounded-lg border border-brand-100 shadow-sm">
+                <strong class="text-slate-900 block mb-1">Árvore de Natal em Aço Carbono</strong>
+                <span class="text-slate-600">Peça decorativa produzida de forma criativa utilizando retalhos de chapas do processo fabril.</span>
+            </div>
+            <div class="bg-white p-4 rounded-lg border border-brand-100 shadow-sm">
+                <strong class="text-slate-900 block mb-1">Suporte para Garrafas de Vinho</strong>
+                <span class="text-slate-600">Utilitário projetado em aço com design moderno e acabamento metálico.</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MODAL ELEGANTE E DISCRETO (LIGHTBOX) -->
+<div id="mediaModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 opacity-0 transition-opacity duration-300" onclick="closeMediaModal(event)">
+    <!-- CARD CONTAINER COM BORDAS FINAS E ANIMAÇÃO -->
+    <div class="relative max-w-4xl w-full bg-slate-900/90 border border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
+        
+        <!-- BARRA SUPERIOR DISCRETA -->
+        <div class="flex items-center justify-between px-4 py-2.5 bg-slate-900/80 border-b border-slate-800">
+            <span class="text-xs font-semibold text-slate-400 flex items-center gap-2">
+                <i class="fa-solid fa-expand text-brand-400"></i> Visualização Expandida
+            </span>
+            <button onclick="closeMediaModal()" class="text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 p-1.5 rounded-lg transition-all text-xs flex items-center gap-1">
+                <span>Fechar</span>
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+        </div>
+
+        <!-- ÁREA DO CONTEÚDO DA MÍDIA -->
+        <div class="p-2 flex items-center justify-center bg-black/40 min-h-[300px] max-h-[80vh]">
+            <img id="modalImage" src="" class="hidden max-w-full max-h-[75vh] object-contain rounded-lg shadow-lg" alt="Mídia Expandida">
+            <video id="modalVideo" controls class="hidden max-w-full max-h-[75vh] rounded-lg shadow-lg">
+                <source id="modalVideoSource" src="" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+<!-- SCRIPT DE CONTROLE DO MODAL -->
+<script>
+    function openMediaModal(type, src) {
+        const modal = document.getElementById('mediaModal');
+        const modalContainer = modal.querySelector('div');
+        const img = document.getElementById('modalImage');
+        const video = document.getElementById('modalVideo');
+        const videoSrc = document.getElementById('modalVideoSource');
+
+        if (type === 'image') {
+            img.src = src;
+            img.classList.remove('hidden');
+            video.classList.add('hidden');
+            video.pause();
+        } else if (type === 'video') {
+            videoSrc.src = src;
+            video.load();
+            video.classList.remove('hidden');
+            img.classList.add('hidden');
+            video.play();
+        }
+
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modalContainer.classList.remove('scale-95');
+            modalContainer.classList.add('scale-100');
+        }, 10);
+
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMediaModal(e) {
+        const modal = document.getElementById('mediaModal');
+        const modalContainer = modal.querySelector('div');
+        const video = document.getElementById('modalVideo');
+
+        modal.classList.add('opacity-0');
+        modalContainer.classList.remove('scale-100');
+        modalContainer.classList.add('scale-95');
+
+        setTimeout(() => {
+            video.pause();
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeMediaModal();
+    });
+</script>
+
+        <!-- HISTÓRICO PROFISSIONAL -->
+        <section id="experiencia" class="space-y-5">
+            <h2 class="text-lg sm:text-xl font-heading font-bold text-slate-900 border-l-4 border-brand-500 pl-3 uppercase tracking-wide">
+                Histórico Profissional
+            </h2>
+
+            <div class="bg-white border border-sky-100 rounded-xl p-6 sm:p-8 shadow-sm">
+                <div class="flex flex-wrap justify-between items-start gap-4 border-b border-slate-100 pb-5 mb-5">
+                    <div>
+                        <span class="text-xs font-bold text-brand-600 uppercase tracking-widest block mb-1">EMPRESA ATUAL (21+ ANOS DE ATUAÇÃO)</span>
+                        <h3 class="font-bold text-slate-900 text-xl">Carrocerias Bachiega</h3>
+                        <p class="text-slate-600 font-semibold text-sm mt-0.5">Operador de Processo de Produção IV</p>
+                    </div>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-200">
+                        21 de Março de 2005 – Atual
+                    </span>
+                </div>
+                
+                <h4 class="text-xs font-bold text-slate-900 uppercase mb-3">Principais Atividades & Resultados:</h4>
+                <ul class="space-y-2 text-xs text-slate-600 leading-relaxed list-disc list-inside">
+                    <li>Operação técnica de máquinas de corte por plasma e oxicorte.</li>
+                    <li>Elaboração, dimensionamento, corte, dobra e produção de peças metálicas para implementos rodoviários novos e manutenção.</li>
+                    <li>Gestão e controle do estoque de matérias-primas, chapas e perfis laminados.</li>
+                    <li>Liderança operacional e direcionamento do setor de guilhotina, dobradeira e serra.</li>
+                    <li>Pequenas montagens de estruturas com processos de solda MIG e eletrodo revestido.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CURSOS E FORMAÇÃO -->
+        <section id="cursos" class="space-y-5">
+            <h2 class="text-lg sm:text-xl font-heading font-bold text-slate-900 border-l-4 border-brand-500 pl-3 uppercase tracking-wide">
+                Formação Acadêmica & Cursos de Capacitação
+            </h2>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                
+                <!-- Técnico em Mecânica -->
+                <div class="bg-white border border-sky-100 p-4 rounded-xl shadow-sm flex items-start gap-3">
+                    <i class="fa-solid fa-graduation-cap text-brand-500 text-xl mt-0.5"></i>
+                    <div>
+                        <h3 class="font-bold text-xs text-slate-900 uppercase">Técnico em Mecânica</h3>
+                        <p class="text-[11px] text-slate-600 font-medium mt-0.5">Centro Paula Souza (Febeliano da Costa)</p>
+                        <p class="text-[10px] text-slate-400 mt-1">Fevereiro/2008 – Junho/2009</p>
+                    </div>
+                </div>
+
+                <!-- Caldeireiro Traçador -->
+                <div class="bg-white border border-sky-100 p-4 rounded-xl shadow-sm flex items-start gap-3">
+                    <i class="fa-solid fa-certificate text-brand-500 text-xl mt-0.5"></i>
+                    <div>
+                        <h3 class="font-bold text-xs text-slate-900 uppercase">Caldeireiro Traçador</h3>
+                        <p class="text-[11px] text-slate-600 font-medium mt-0.5">SENAI Celso Charuri</p>
+                        <p class="text-[10px] text-slate-400 mt-1">Janeiro/2024 – Julho/2024</p>
+                    </div>
+                </div>
+
+                <!-- Inglês Wizard -->
+                <div class="bg-white border border-sky-100 p-4 rounded-xl shadow-sm flex items-start gap-3">
+                    <i class="fa-solid fa-language text-brand-500 text-xl mt-0.5"></i>
+                    <div>
+                        <h3 class="font-bold text-xs text-slate-900 uppercase">Curso de Inglês</h3>
+                        <p class="text-[11px] text-slate-600 font-medium mt-0.5">Wizard Language Course</p>
+                        <p class="text-[10px] text-slate-400 mt-1">2020 – 2025</p>
+                    </div>
+                </div>
+
+                <!-- Mecânico de Usinagem -->
+                <div class="bg-white border border-sky-100 p-4 rounded-xl shadow-sm flex items-start gap-3">
+                    <i class="fa-solid fa-gears text-brand-500 text-xl mt-0.5"></i>
+                    <div>
+                        <h3 class="font-bold text-xs text-slate-900 uppercase">Mecânico de Usinagem (Convencional)</h3>
+                        <p class="text-[11px] text-slate-600 font-medium mt-0.5">SENAI Celso Charuri</p>
+                        <p class="text-[10px] text-slate-400 mt-1">Concluído em 2005</p>
+                    </div>
+                </div>
+
+                <!-- Programador CNC -->
+                <div class="bg-white border border-sky-100 p-4 rounded-xl shadow-sm flex items-start gap-3">
+                    <i class="fa-solid fa-microchip text-brand-500 text-xl mt-0.5"></i>
+                    <div>
+                        <h3 class="font-bold text-xs text-slate-900 uppercase">Programador e Operador de Torno CNC</h3>
+                        <p class="text-[11px] text-slate-600 font-medium mt-0.5">SENAI</p>
+                        <p class="text-[10px] text-slate-400 mt-1">Janeiro/2006 – Junho/2006</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INFORMAÇÕES EXTRAS / ENGAJAMENTO SOCIAL -->
+        <section class="bg-white border border-sky-100 rounded-xl p-6 shadow-sm">
+            <h2 class="text-sm font-heading font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-2">
+                <i class="fa-solid fa-hands-holding-child text-brand-500"></i> Engajamento Comunitário & Ação Social
+            </h2>
+            <p class="text-xs text-slate-600 leading-relaxed">
+                Participo ativamente na <strong>Igreja Católica Apostólica Romana</strong>, na cidade de Capivari/SP, junto à <strong>Paróquia Nossa Senhora de Fátima</strong>. Desenvolvo um trabalho voltado à formação e acompanhamento de jovens que desejam servir solenemente durante o momento da Santa Missa.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ CORPORATIVO APRIMORADO -->
+    <footer class="bg-slate-900 text-slate-300 pt-12 pb-8 border-t border-slate-800 text-xs">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid md:grid-cols-12 gap-8 pb-10 border-b border-slate-800/80">
+                
+                <!-- COLUNA 1: RESUMO DO PERFIL -->
+                <div class="md:col-span-5 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 bg-brand-500 text-white rounded-lg flex items-center justify-center font-bold text-sm font-heading shadow-md shadow-brand-500/20">
+                            EA
+                        </div>
+                        <div>
+                            <span class="font-heading font-bold text-sm text-white block leading-tight">Everton L. R. de Andrade</span>
+                            <span class="text-[11px] text-brand-400 font-medium">Operador IV • Técnico em Mecânica</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed pr-2">
+                        Mais de 21 anos de sólida experiência no setor metalmecânico e de implementos rodoviários, especialista em conformação, corte, dobra e caldeiraria.
+                    </p>
+                </div>
+
+                <!-- COLUNA 2: NAVEGAÇÃO RÁPIDA -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider font-heading border-l-2 border-brand-400 pl-2">
+                        Navegação
+                    </h4>
+                    <ul class="space-y-2 text-slate-400 font-medium">
+                        <li><a href="#perfil" class="hover:text-brand-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-brand-500"></i> Perfil Profissional</a></li>
+                        <li><a href="#habilidades" class="hover:text-brand-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-brand-500"></i> Habilidades Técnicas</a></li>
+                        <li><a href="#projetos" class="hover:text-brand-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-brand-500"></i> Portfólio de Projetos</a></li>
+                        <li><a href="#experiencia" class="hover:text-brand-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-brand-500"></i> Histórico de Carreira</a></li>
+                        <li><a href="#cursos" class="hover:text-brand-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[9px] text-brand-500"></i> Formação e Cursos</a></li>
+                    </ul>
+                </div>
+
+                <!-- COLUNA 3: CONTATO E REDES SOCIAIS -->
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider font-heading border-l-2 border-brand-400 pl-2">
+                        Conecte-se Comigo
+                    </h4>
+                    <div class="space-y-2 text-slate-400">
+                        <a href="tel:19994487582" class="hover:text-white transition-colors flex items-center gap-2.5">
+                            <i class="fa-solid fa-phone text-brand-400"></i> (19) 99448-7582
+                        </a>
+                        <a href="mailto:valterfa.2006@uol.com.br" class="hover:text-white transition-colors flex items-center gap-2.5">
+                            <i class="fa-solid fa-envelope text-brand-400"></i> valterfa.2006@uol.com.br
+                        </a>
+                        <p class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-location-dot text-brand-400"></i> Rafard - SP, Brasil
+                        </p>
+                    </div>
+
+                    <!-- BOTÕES DE REDES SOCIAIS -->
+                    <div class="pt-2 flex items-center gap-2">
+                        <a href="https://instagram.com/everton_andrade89/" target="_blank" rel="noopener noreferrer" class="bg-slate-800 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500 text-slate-300 hover:text-white px-3 py-2 rounded-lg flex items-center gap-2 transition-all font-semibold text-xs border border-slate-700/60 shadow-sm group">
+                            <i class="fa-brands fa-instagram text-sm group-hover:scale-110 transition-transform"></i> Instagram
+                        </a>
+
+                        <a href="https://wa.me/5519994487582" target="_blank" rel="noopener noreferrer" class="bg-slate-800 hover:bg-emerald-600 text-slate-300 hover:text-white px-3 py-2 rounded-lg flex items-center gap-2 transition-all font-semibold text-xs border border-slate-700/60 shadow-sm group">
+                            <i class="fa-brands fa-whatsapp text-sm group-hover:scale-110 transition-transform"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- DIREITOS AUTORAIS -->
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-slate-500 text-[11px]">
+                <p>© Everton Lúcio Romagnolo de Andrade. Todos os direitos reservados.</p>
+                <p class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-code text-brand-400"></i> Portfólio Profissional
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÃO "VOLTAR AO TOPO" COM SETA -->
+    <button id="back-to-top" aria-label="Voltar ao topo" class="opacity-0 pointer-events-none fixed bottom-6 right-6 bg-brand-500 hover:bg-brand-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 z-50 hover:scale-110">
+        <i class="fa-solid fa-arrow-up text-lg"></i>
+    </button>
+
+    <!-- SCRIPT JAVASCRIPT: CONTROLE DO MENU RESPONSIVO & BOTÃO SUBIR -->
+    <script>
+        // Elementos do Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Toggle do Menu Mobile
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Fechar menu ao clicar em qualquer item
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Controle do Botão "Voltar ao Topo"
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+</body>
+</html>
